@@ -1,151 +1,155 @@
 /* ================================================ */
 /* ESTILOS GENERALES                 */
 /* ================================================ */
-
-/* Usamos una fuente más moderna y un fondo oscuro */
 body {
-    font-family: sans-serif; /* Una fuente limpia y fácil de leer */
-    background-color: #121212; /* Un fondo negro-grisáceo oscuro */
-    color: #e0e0e0; /* Un color de texto blanco-grisáceo que no cansa la vista */
-    margin: 0; /* Quitamos los márgenes por defecto del navegador */
+    font-family: sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
     padding: 0;
 }
-
-/* Centramos el contenido principal de la página y le damos un ancho máximo */
-/* para que no se extienda por toda la pantalla en monitores grandes */
 main, header, footer {
     max-width: 800px;
-    margin: 20px auto; /* 20px de espacio arriba/abajo, y 'auto' para centrar horizontalmente */
-    padding: 0 20px; /* Añadimos un poco de espacio a los lados para que el texto no se pegue a los bordes */
+    margin: 20px auto;
+    padding: 0 20px;
 }
 
 /* ================================================ */
 /* ESTILOS DE TEXTO                */
 /* ================================================ */
-
-/* Estilos para los títulos principales */
 h1 {
-    font-size: 2.5em; /* em es una unidad relativa, esto es 2.5 veces el tamaño normal */
+    font-size: 2.5em;
     color: #ffffff;
 }
-
 h2 {
     font-size: 1.8em;
     color: #ffffff;
-    border-bottom: 2px solid #444; /* Una línea sutil debajo de los subtítulos */
+    border-bottom: 2px solid #444;
     padding-bottom: 10px;
 }
-
 h3 {
     font-size: 1.2em;
-    color: #1E90FF; /* Un azul brillante para los nombres de los servicios */
+    color: #47C8C3; /* TU COLOR: Turquesa Vibrante */
 }
-
-/* Estilos para los enlaces */
 a {
-    color: #1E90FF; /* Mismo azul para los enlaces */
-    text-decoration: none; /* Quitamos el subrayado feo */
+    color: #47C8C3; /* TU COLOR: Turquesa Vibrante */
+    text-decoration: none;
 }
-
 a:hover {
-    text-decoration: underline; /* Hacemos que el subrayado aparezca solo al pasar el mouse */
+    text-decoration: underline;
 }
 
 /* ================================================ */
 /* ESTILOS DE LAS SECCIONES               */
 /* ================================================ */
-
-/* Estilos para cada tarjeta de servicio */
 article {
-    background-color: #1e1e1e; /* Un gris un poco más claro que el fondo */
-    border: 1px solid #333; /* Un borde sutil */
-    border-radius: 8px; /* Bordes redondeados */
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 8px;
     padding: 20px;
-    margin-bottom: 20px; /* Espacio entre cada tarjeta */
+    margin-bottom: 20px;
 }
+
 /* ================================================ */
 /* ESTILOS DEL FORMULARIO               */
 /* ================================================ */
-
 form {
     background-color: #1e1e1e;
     border: 1px solid #333;
     border-radius: 8px;
     padding: 25px;
 }
-
-/* Estilo para los campos de texto, email, select, etc. */
 input[type="text"],
 input[type="tel"],
 select,
 textarea {
-    width: 100%; /* Hacemos que ocupen todo el ancho disponible */
+    width: 100%;
     padding: 10px;
     margin-top: 5px;
-    margin-bottom: 15px; /* Espacio debajo de cada campo */
+    margin-bottom: 15px;
     background-color: #333;
     color: #e0e0e0;
     border: 1px solid #555;
     border-radius: 4px;
-    box-sizing: border-box; /* Importante para que el padding no afecte el ancho total */
+    box-sizing: border-box;
 }
-
-/* Estilo para el botón de envío */
 button[type="submit"] {
-    background-color: #1E90FF; /* Mismo azul que los enlaces */
-    color: white;
+    background-color: #47C8C3; /* TU COLOR: Turquesa Vibrante */
+    color: #000000; /* Texto negro para mejor contraste */
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
-    cursor: pointer; /* Cambia el cursor a una manita al pasar por encima */
+    cursor: pointer;
     font-size: 1em;
     font-weight: bold;
 }
-
 button[type="submit"]:hover {
-    background-color: #0073e6; /* Un azul un poco más oscuro al pasar el mouse */
+    background-color: #36A5A1; /* TU COLOR: Turquesa Oscuro para el hover */
 }
+
 /* ================================================ */
 /* ESTILOS DEL CATÁLOGO                 */
 /* ================================================ */
-
-/* Usamos CSS Grid para crear una cuadrícula de productos flexible */
 .catalogo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas automáticas */
-    gap: 20px; /* Espacio entre los productos */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
-
-/* Reutilizamos los estilos de 'article' pero les llamamos 'producto' para ser más específicos */
 .producto {
     background-color: #1e1e1e;
     border: 1px solid #333;
     border-radius: 8px;
     padding: 20px;
-    display: flex; /* Usamos flexbox para alinear el contenido interno */
+    display: flex;
     flex-direction: column;
 }
-
 .producto .precio {
     font-size: 1.3em;
     font-weight: bold;
     color: #ffffff;
     margin-top: 0;
 }
-
-/* Estilo para el botón de compra */
 .boton-comprar {
     display: inline-block;
-    background-color: #1E90FF;
-    color: white;
+    background-color: #47C8C3; /* TU COLOR: Turquesa Vibrante */
+    color: #000000; /* Texto negro para mejor contraste */
     padding: 12px 20px;
     border-radius: 4px;
     text-align: center;
     font-weight: bold;
-    margin-top: auto; /* Truco de Flexbox: empuja el botón siempre al final de la tarjeta */
+    margin-top: auto;
+}
+.boton-comprar:hover {
+    background-color: #36A5A1; /* TU COLOR: Turquesa Oscuro para el hover */
+    text-decoration: none;
 }
 
-.boton-comprar:hover {
-    background-color: #0073e6;
-    text-decoration: none;
+/* ================================================ */
+/* ESTILOS DEL LOGO Y NAVEGACIÓN        */
+/* ================================================ */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+.logo-link {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+}
+.logo-link img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+nav ul li a {
+    padding: 15px;
+    display: block;
 }
