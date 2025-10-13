@@ -3,45 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soporte - RacoonStream</title>
+    <title>Soporte y Reportes - RacoonStream</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <nav>
-            <a href="index.html"><strong>RACCOONSTREAM</strong></a>
+            <a href="index.html" class="logo-link">
+                <img src="images/LogoRacoonstream.jpeg" alt="Logo de RacoonStream">
+                <strong>RACCOONSTREAM</strong>
+            </a>
             <ul>
-                <li><a href="catalogo.html">Catálogo de Servicios</a></li>
-                <li><a href="soporte.html">Soporte y Reportes</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="promociones.html">Promociones</a></li>
+                <li><a href="soporte.html">Soporte</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section>
-            <h1>Centro de Soporte y Reportes</h1>
-            <p>Para atenderte de la forma más rápida y ordenada, por favor llena el siguiente formulario con toda la información. Recibiremos tu reporte al instante.</p>
+            <h1>Centro de Soporte</h1>
+            <p>¿Tienes algún problema con tu cuenta? Por favor, llena el siguiente formulario para levantar un reporte. Atenderemos tu caso a la brevedad posible y de forma ordenada.</p>
             
-            <form action="https://formspree.io/f/mwprrgdp" method="POST">
+            <form action="https://formspree.io/f/TU_CODIGO_DE_FORMSPREE" method="POST">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
 
-                <label for="nombre">Tu Nombre:</label><br>
-                <input type="text" id="nombre" name="nombre" required><br><br>
+                <label for="telefono">Número de WhatsApp (10 dígitos):</label>
+                <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{10}">
 
-                <label for="whatsapp">Tu Número de WhatsApp:</label><br>
-                <input type="tel" id="whatsapp" name="whatsapp" required><br><br>
-
-                <label for="servicio">Servicio con problemas:</label><br>
+                <label for="servicio">Servicio con el que tienes problemas:</label>
                 <select id="servicio" name="servicio" required>
-                    <option value="">-- Elige un servicio --</option>
+                    <option value="">--Elige un servicio--</option>
                     <option value="Netflix">Netflix</option>
                     <option value="Spotify">Spotify</option>
-                    <option value="HBO Max">HBO Max (MAX)</option>
+                    <option value="Max">Max</option>
+                    <option value="Disney+">Disney+</option>
+                    <option value="Prime Video">Prime Video</option>
+                    <option value="Crunchyroll">Crunchyroll</option>
                     <option value="Otro">Otro (especificar abajo)</option>
-                </select><br><br>
+                </select>
 
-                <label for="problema">Describe el problema:</label><br>
-                <textarea id="problema" name="problema" rows="4" required></textarea><br><br>
+                <label for="descripcion">Describe tu problema detalladamente:</label>
+                <textarea id="descripcion" name="descripcion" rows="6" required></textarea>
 
                 <button type="submit">Enviar Reporte</button>
             </form>
@@ -51,6 +58,22 @@
     <footer>
         <p>&copy; 2025 RacoonStream. Todos los derechos reservados.</p>
     </footer>
+
+    <div class="carrito-icono" id="carrito-icono">
+        🛒 <span id="carrito-contador">0</span>
+    </div>
+    <div class="modal-carrito" id="modal-carrito">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" id="cerrar-modal">&times;</span>
+            <h2>Tu Carrito de Compras</h2>
+            <div id="carrito-items"></div>
+            <div class="modal-acciones">
+                <a id="finalizar-compra-btn" class="cta-button" href="#">Finalizar Pedido</a>
+                <button id="vaciar-carrito-btn" class="secondary-button">Vaciar Carrito</button>
+            </div>
+        </div>
+    </div>
     
+    <script src="script.js"></script>
 </body>
 </html>

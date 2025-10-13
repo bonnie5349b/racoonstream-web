@@ -10,50 +10,88 @@
 
     <header>
         <nav>
-            <a href="index.html"><strong>RACCOONSTREAM</strong></a>
+            <a href="index.html" class="logo-link">
+                <img src="images/LogoRacoonstream.jpeg" alt="Logo de RacoonStream">
+                <strong>RACCOONSTREAM</strong>
+            </a>
             <ul>
-                <li><a href="catalogo.html">Catálogo de Servicios</a></li>
-                <li><a href="soporte.html">Soporte y Reportes</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="promociones.html">Promociones</a></li>
+                <li><a href="soporte.html">Soporte</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
-            <h1>Tu Entretenimiento, Sin Pausas</h1>
-            <p>El servicio de confianza en la universidad. Cuentas estables y garantía durante todo el mes.</p>
-            <a href="catalogo.html">VER PLANES AHORA</a>
+        <section class="hero-section">
+            <h1>Tu Entretenimiento. Simple, Rápido y Garantizado.</h1>
+            <p>La opción de confianza para tus cuentas de streaming. Soporte real, entrega inmediata.</p>
+            <a href="catalogo.html" class="cta-button">Explorar Catálogo Completo</a>
         </section>
 
-        <hr> <section>
-            <h2>Nuestros Servicios Más Populares</h2>
-            
-            <article>
-                <h3>Netflix Premium</h3>
-                <p>Acceso a 1 pantalla en calidad Ultra HD. Garantía completa.</p>
-                <p><strong>Precio: $90 MXN / mes</strong></p>
-            </article>
+        <section class="ventajas-section">
+            <h2>¿Por Qué Elegir RacoonStream?</h2>
+            <div class="ventajas-grid">
+                <div class="ventaja">
+                    <h3>Entrega Inmediata</h3>
+                    <p>Recibe tu cuenta minutos después de confirmar tu pago. Sin esperas, solo entretenimiento.</p>
+                </div>
+                <div class="ventaja">
+                    <h3>Garantía Total</h3>
+                    <p>Tu cuenta está protegida durante todo el mes. Si algo falla, te lo solucionamos al instante.</p>
+                </div>
+                <div class="ventaja">
+                    <h3>Soporte Eficaz</h3>
+                    <p>Usa nuestro sistema de reportes y recibe atención ordenada y rápida.</p>
+                </div>
+            </div>
+        </section>
 
-            <article>
-                <h3>Spotify Premium</h3>
-                <p>Música sin interrupciones y con la mejor calidad de audio.</p>
-                <p><strong>Precio: $40 MXN / mes</strong></p>
-            </article>
-
-            <article>
-                <h3>HBO Max (Ahora MAX)</h3>
-                <p>Todas las series y películas de HBO, Warner Bros. y más.</p>
-                <p><strong>Precio: $50 MXN / mes</strong></p>
-            </article>
+        <section class="populares-section">
+            <h2>Los Más Vendidos</h2>
+            <div class="catalogo-grid">
+                <article class="producto">
+                    <h3>Netflix (Perfil)</h3>
+                    <p class="precio">$63 MXN / mes</p>
+                    <p>Acceso a 1 perfil en calidad HD para que disfrutes tus series favoritas.</p>
+                    <button class="boton-comprar add-to-cart-btn" data-product-name="Netflix (Perfil)">Añadir al carrito</button>
+                </article>
+                <article class="producto">
+                    <h3>Spotify</h3>
+                    <p class="precio">$68 MXN / mes</p>
+                    <p>Música sin interrupciones y con la mejor calidad de audio en tu cuenta personal.</p>
+                    <button class="boton-comprar add-to-cart-btn" data-product-name="Spotify">Añadir al carrito</button>
+                </article>
+                <article class="producto">
+                    <h3>Max (Platino Perfil)</h3>
+                    <p class="precio">$35 MXN / mes</p>
+                    <p>La mejor experiencia con acceso a 1 perfil en calidad 4K Ultra HD.</p>
+                    <button class="boton-comprar add-to-cart-btn" data-product-name="Max (Platino Perfil)">Añadir al carrito</button>
+                </article>
+            </div>
         </section>
     </main>
 
-    <hr>
-
     <footer>
         <p>&copy; 2025 RacoonStream. Todos los derechos reservados.</p>
-        <p>¿Problemas con tu cuenta? <a href="soporte.html">Levanta un reporte aquí.</a></p>
     </footer>
 
+    <div class="carrito-icono" id="carrito-icono">
+        🛒 <span id="carrito-contador">0</span>
+    </div>
+    <div class="modal-carrito" id="modal-carrito">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" id="cerrar-modal">&times;</span>
+            <h2>Tu Carrito de Compras</h2>
+            <div id="carrito-items"></div>
+            <div class="modal-acciones">
+                <a id="finalizar-compra-btn" class="cta-button" href="#">Finalizar Pedido</a>
+                <button id="vaciar-carrito-btn" class="secondary-button">Vaciar Carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>

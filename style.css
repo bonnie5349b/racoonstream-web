@@ -8,148 +8,114 @@ body {
     margin: 0;
     padding: 0;
 }
-main, header, footer {
+main, footer {
     max-width: 800px;
     margin: 20px auto;
     padding: 0 20px;
 }
 
 /* ================================================ */
+/* ESTILOS DEL BANNER DEL ENCABEZADO    */
+/* ================================================ */
+header {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10px 0;
+}
+header nav {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ================================================ */
 /* ESTILOS DE TEXTO                */
 /* ================================================ */
-h1 {
-    font-size: 2.5em;
-    color: #ffffff;
-}
-h2 {
-    font-size: 1.8em;
-    color: #ffffff;
-    border-bottom: 2px solid #444;
-    padding-bottom: 10px;
-}
-h3 {
-    font-size: 1.2em;
-    color: #47C8C3; /* TU COLOR: Turquesa Vibrante */
-}
-a {
-    color: #47C8C3; /* TU COLOR: Turquesa Vibrante */
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-
-/* ================================================ */
-/* ESTILOS DE LAS SECCIONES               */
-/* ================================================ */
-article {
-    background-color: #1e1e1e;
-    border: 1px solid #333;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-/* ================================================ */
-/* ESTILOS DEL FORMULARIO               */
-/* ================================================ */
-form {
-    background-color: #1e1e1e;
-    border: 1px solid #333;
-    border-radius: 8px;
-    padding: 25px;
-}
-input[type="text"],
-input[type="tel"],
-select,
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    background-color: #333;
-    color: #e0e0e0;
-    border: 1px solid #555;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-button[type="submit"] {
-    background-color: #47C8C3; /* TU COLOR: Turquesa Vibrante */
-    color: #000000; /* Texto negro para mejor contraste */
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: bold;
-}
-button[type="submit"]:hover {
-    background-color: #36A5A1; /* TU COLOR: Turquesa Oscuro para el hover */
-}
-
-/* ================================================ */
-/* ESTILOS DEL CATÁLOGO                 */
-/* ================================================ */
-.catalogo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-.producto {
-    background-color: #1e1e1e;
-    border: 1px solid #333;
-    border-radius: 8px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-}
-.producto .precio {
-    font-size: 1.3em;
-    font-weight: bold;
-    color: #ffffff;
-    margin-top: 0;
-}
-.boton-comprar {
-    display: inline-block;
-    background-color: #47C8C3; /* TU COLOR: Turquesa Vibrante */
-    color: #000000; /* Texto negro para mejor contraste */
-    padding: 12px 20px;
-    border-radius: 4px;
-    text-align: center;
-    font-weight: bold;
-    margin-top: auto;
-}
-.boton-comprar:hover {
-    background-color: #36A5A1; /* TU COLOR: Turquesa Oscuro para el hover */
-    text-decoration: none;
-}
+h1 { font-size: 2.5em; color: #ffffff; }
+h2 { font-size: 1.8em; color: #ffffff; border-bottom: 2px solid #444; padding-bottom: 10px; margin-top: 40px; }
+h3 { font-size: 1.2em; color: #47C8C3; }
+a { color: #47C8C3; text-decoration: none; }
+a:hover { text-decoration: underline; }
 
 /* ================================================ */
 /* ESTILOS DEL LOGO Y NAVEGACIÓN        */
 /* ================================================ */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-}
-.logo-link {
-    display: flex;
-    align-items: center;
-    font-size: 1.5em;
-}
-.logo-link img {
-    height: 40px;
-    width: auto;
-    margin-right: 10px;
-}
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-nav ul li a {
-    padding: 15px;
-    display: block;
-}
+nav { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; }
+.logo-link { display: flex; align-items: center; font-size: 1.5em; }
+.logo-link img { height: 50px; width: auto; margin-right: 15px; }
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
+nav ul li { list-style-type: none !important; }
+nav ul li a { padding: 15px; display: block; }
+
+/* ================================================ */
+/* ESTILOS DE LA PÁGINA DE INICIO */
+/* ================================================ */
+.hero-section { text-align: center; padding: 60px 20px; background-color: #1e1e1e; border-radius: 8px; margin-bottom: 40px; }
+.hero-section h1 { font-size: 3em; margin-bottom: 15px; }
+.hero-section p { font-size: 1.2em; color: #b0b0b0; max-width: 600px; margin: 0 auto 30px auto; }
+.cta-button { background-color: #47C8C3; color: #000000; font-size: 1.1em; font-weight: bold; padding: 15px 30px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; border: none; cursor: pointer; }
+.cta-button:hover { background-color: #36A5A1; text-decoration: none; }
+.ventajas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; text-align: center; }
+.ventaja { background-color: #1e1e1e; padding: 25px; border-radius: 8px; }
+.ventaja h3 { margin-top: 0; font-size: 1.3em; }
+
+/* ================================================ */
+/* ESTILOS DEL CATÁLOGO INTELIGENTE     */
+/* ================================================ */
+.filtros { margin-bottom: 30px; text-align: center; }
+.filtro-btn { background-color: #333; color: #e0e0e0; border: 1px solid #555; padding: 10px 20px; margin: 0 5px; border-radius: 5px; cursor: pointer; font-size: 1em; transition: background-color 0.3s ease; }
+.filtro-btn:hover { background-color: #555; }
+.filtro-btn.active { background-color: #47C8C3; color: #000000; font-weight: bold; border-color: #47C8C3; }
+.catalogo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.producto { background-color: #1e1e1e; border: 1px solid #333; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; }
+.producto .precio { font-size: 1.3em; font-weight: bold; color: #ffffff; margin-top: 0; }
+.boton-comprar { display: inline-block; background-color: #47C8C3; color: #000000; padding: 12px 20px; border-radius: 4px; text-align: center; font-weight: bold; margin-top: auto; border: none; cursor: pointer; width: 100%; }
+.boton-comprar:hover { background-color: #36A5A1; text-decoration: none; }
+.combo ul { list-style: none; padding-left: 0; text-align: left; margin-bottom: 20px; }
+.combo ul li { padding: 5px 0; border-bottom: 1px solid #333; }
+.combo ul li:last-child { border-bottom: none; }
+
+/* ================================================ */
+/* ESTILOS PÁGINA DE PROMOCIONES        */
+/* ================================================ */
+.promo-builder { display: flex; flex-wrap: wrap; gap: 30px; }
+.service-list { flex: 2; background-color: #1e1e1e; padding: 20px; border-radius: 8px; min-width: 300px; }
+.summary { flex: 1; background-color: #1e1e1e; padding: 20px; border-radius: 8px; position: sticky; top: 20px; height: fit-content; min-width: 250px; }
+.service-item { display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #333; }
+.service-item:last-child { border-bottom: none; }
+.service-item input[type="checkbox"] { width: 20px; height: 20px; margin-right: 15px; }
+.service-item label { flex-grow: 1; cursor: pointer; }
+.service-item .precio { font-weight: bold; color: #ffffff; }
+.summary h2 { margin-top: 0; border-bottom: none; }
+.summary .descuento-texto { color: #47C8C3; font-weight: bold; }
+.summary .total-final { font-size: 1.5em; }
+.summary .cta-button:disabled { background-color: #555; cursor: not-allowed; }
+
+/* ================================================ */
+/* ESTILOS DEL CARRITO DE COMPRAS       */
+/* ================================================ */
+.carrito-icono { position: fixed; bottom: 20px; right: 20px; background-color: #47C8C3; color: #000000; padding: 15px; border-radius: 50%; cursor: pointer; font-size: 24px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); z-index: 1000; }
+#carrito-contador { position: absolute; top: -5px; right: -5px; background-color: #F57D7D; color: white; font-size: 14px; font-weight: bold; border-radius: 50%; padding: 4px 8px; }
+.modal-carrito { display: none; position: fixed; z-index: 1001; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7); }
+.modal-contenido { background-color: #1e1e1e; margin: 10% auto; padding: 20px; border: 1px solid #333; width: 90%; max-width: 600px; border-radius: 8px; position: relative; }
+.cerrar-modal { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+.cerrar-modal:hover { color: white; }
+#carrito-items { margin-top: 20px; margin-bottom: 30px; max-height: 300px; overflow-y: auto; }
+.carrito-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #333; }
+.carrito-item-info { flex-grow: 1; }
+.carrito-item-detalle { display: block; color: #999; font-size: 0.8em; margin-top: 5px; }
+.eliminar-item-btn { background-color: #555; color: white; border: none; border-radius: 50%; width: 25px; height: 25px; cursor: pointer; font-weight: bold; font-size: 14px; line-height: 25px; text-align: center; flex-shrink: 0; margin-left: 10px; }
+.eliminar-item-btn:hover { background-color: #F57D7D; }
+.modal-acciones { display: flex; gap: 10px; margin-top: 20px; }
+.modal-acciones .cta-button, .modal-acciones .secondary-button { flex: 1; width: auto; margin-top: 0; }
+.secondary-button { background-color: transparent; color: #aaa; border: 1px solid #555; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 1em; }
+.secondary-button:hover { background-color: #333; color: white; }
+
+/* ================================================ */
+/* ESTILOS DEL FORMULARIO DE SOPORTE    */
+/* ================================================ */
+form { background-color: #1e1e1e; border: 1px solid #333; border-radius: 8px; padding: 25px; }
+input[type="text"], input[type="tel"], select, textarea { width: 100%; padding: 10px; margin-top: 5px; margin-bottom: 15px; background-color: #333; color: #e0e0e0; border: 1px solid #555; border-radius: 4px; box-sizing: border-box; }
+button[type="submit"] { background-color: #47C8C3; color: #000000; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 1em; font-weight: bold; }
+button[type="submit"]:hover { background-color: #36A5A1; }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo Inteligente - RacoonStream</title>
+    <title>Crea tu Paquete - RacoonStream</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,17 +25,23 @@
 
     <main>
         <section>
-            <h1>Nuestro Catálogo Completo</h1>
-            <p>Explora todas nuestras opciones. Usa los filtros para ver las ofertas de un proveedor específico.</p>
+            <h1>Crea tu Propio Paquete y Ahorra</h1>
+            <p>Selecciona 4 o más servicios de la lista y obtén un <strong>15% de descuento</strong> en tu total. ¡El paquete perfecto, hecho por ti!</p>
             
-            <div class="filtros">
-                <button class="filtro-btn active" data-provider="todos">Ver Todo</button>
-                <button class="filtro-btn" data-provider="Kary">Kary Streaming</button>
-                <button class="filtro-btn" data-provider="Pris Shop">Pris Shop</button>
-            </div>
-            
-            <div id="product-grid" class="catalogo-grid">
+            <div class="promo-builder">
+                <div id="promo-service-list" class="service-list">
+                    </div>
+
+                <div id="promo-summary" class="summary">
+                    <h2>Resumen de tu Paquete</h2>
+                    <p>Servicios seleccionados: <span id="item-count">0</span></p>
+                    <p>Subtotal: <span id="subtotal-price">$0 MXN</span></p>
+                    <p class="descuento-texto" id="descuento-texto">¡Selecciona 4 o más para obtener tu descuento!</p>
+                    <hr>
+                    <p class="total-final">Total: <strong id="total-price">$0 MXN</strong></p>
+                    <button id="add-bundle-to-cart-btn" class="cta-button" disabled>Añadir Paquete al Carrito</button>
                 </div>
+            </div>
         </section>
     </main>
 
