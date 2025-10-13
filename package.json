@@ -1,4 +1,17 @@
 {
+  "name": "racoonstream-web",
+  "version": "1.0.0",
+  "description": "Sitio web para suscripciones RacoonStream con pagos vía Stripe y Netlify Functions.",
+  "main": "index.js",
+  "scripts": {
+    "start": "netlify dev"
+  },
+  "keywords": [
+    "netlify",
+    "stripe",
+    "functions",
+    "ecommerce"
+  ],
   "dependencies": {
     "stripe": "^14.0.0"
   }
