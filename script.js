@@ -1,41 +1,41 @@
 // ===================================================================
-//  BASE DE DATOS DE PRODUCTOS
+//  BASE DE DATOS DE PRODUCTOS (PRECIOS ACTUALIZADOS CON COMISIÓN)
 // ===================================================================
 const productos = [
     // --- COMBOS PREDEFINIDOS DE KARY ---
-    { provider: 'Kary', name: 'Combo Fantasma 👻', price: 75, durationText: 'MXN / mes', description: '<ul><li>Netflix</li><li>Disney Premium</li><li>Vix</li><li>Deezer</li></ul>', message: 'Hola, me interesa el Combo Fantasma de Kary.', type: 'combo' },
-    { provider: 'Kary', name: 'Combo Telaraña 🕸️', price: 55, durationText: 'MXN / mes', description: '<ul><li>Disney</li><li>Max</li><li>YouTube</li><li>Paramount</li></ul>', message: 'Hola, me interesa el Combo Telaraña de Kary.', type: 'combo' },
-    { provider: 'Kary', name: 'Combo Dulce 🍡', price: 128, durationText: 'MXN / mes', description: '<ul><li>Netflix, Disney, Max</li><li>Vix, Paramount</li><li>Crunchyroll, Spotify</li></ul>', message: 'Hola, me interesa el Combo Dulce de Kary.', type: 'combo' },
-    { provider: 'Kary', name: 'Combo Truco 🎃', price: 65, durationText: 'MXN / mes', description: '<ul><li>Canva, YouTube</li><li>Crunchyroll, Paramount</li><li>Vix, Prime Video</li></ul>', message: 'Hola, me interesa el Combo Truco de Kary.', type: 'combo' },
+    { provider: 'Kary', name: 'Combo Fantasma 👻', price: 80.91, durationText: 'MXN / mes', description: '<ul><li>Netflix</li><li>Disney Premium</li><li>Vix</li><li>Deezer</li></ul>', message: 'Hola, me interesa el Combo Fantasma de Kary.', type: 'combo' },
+    { provider: 'Kary', name: 'Combo Telaraña 🕸️', price: 60.17, durationText: 'MXN / mes', description: '<ul><li>Disney</li><li>Max</li><li>YouTube</li><li>Paramount</li></ul>', message: 'Hola, me interesa el Combo Telaraña de Kary.', type: 'combo' },
+    { provider: 'Kary', name: 'Combo Dulce 🍡', price: 135.89, durationText: 'MXN / mes', description: '<ul><li>Netflix, Disney, Max</li><li>Vix, Paramount</li><li>Crunchyroll, Spotify</li></ul>', message: 'Hola, me interesa el Combo Dulce de Kary.', type: 'combo' },
+    { provider: 'Kary', name: 'Combo Truco 🎃', price: 70.54, durationText: 'MXN / mes', description: '<ul><li>Canva, YouTube</li><li>Crunchyroll, Paramount</li><li>Vix, Prime Video</li></ul>', message: 'Hola, me interesa el Combo Truco de Kary.', type: 'combo' },
     
     // --- PRODUCTOS INDIVIDUALES (KARY Y PRIS SHOP) ---
-    { provider: 'Kary', name: 'Netflix', price: 72, durationText: 'MXN / mes', description: 'Disfruta de series y películas populares. Acceso a 1 perfil.', message: 'Hola, me interesa contratar Netflix de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Disney+ Combo', price: 40, durationText: 'MXN / mes', description: 'Incluye Disney+, ESPN y Star+.', message: 'Hola, me interesa contratar el combo Disney+ de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Paramount+', price: 13, durationText: 'MXN / mes', description: 'Contenido exclusivo, series y películas originales.', message: 'Hola, me interesa contratar Paramount+ de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Prime Video', price: 22, durationText: 'MXN / mes', description: 'Acceso a Amazon Originals, películas y series populares.', message: 'Hola, me interesa contratar Prime Video de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Prime Video (Sin Anuncios)', price: 81, durationText: 'MXN / mes', description: 'La experiencia premium de Prime Video sin interrupciones comerciales.', message: 'Hola, me interesa contratar Prime Video Sin Anuncios de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Crunchyroll', price: 13, durationText: 'MXN / mes', description: 'La casa del anime. Acceso a un extenso catálogo sin anuncios.', message: 'Hola, me interesa contratar Crunchyroll de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Crunchyroll (5 Perfiles)', price: 54, durationText: 'MXN / mes', description: 'Cuenta completa para compartir con hasta 5 personas.', message: 'Hola, me interesa contratar Crunchyroll (5 Perfiles) de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Max (Estándar)', price: 18, durationText: 'MXN / mes', description: 'Acceso a 1 perfil en el plan Estándar de Max (antes HBO).', message: 'Hola, me interesa contratar Max (Estándar) de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Max (Platino)', price: 29, durationText: 'MXN / mes', description: 'La mejor calidad en 4K Ultra HD y audio Dolby Atmos.', message: 'Hola, me interesa contratar Max (Platino) de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Max (Estándar - Cuenta Completa)', price: 72, durationText: 'MXN / mes', description: 'Cuenta completa del plan Estándar para toda la familia.', message: 'Hola, me interesa contratar Max (Estándar - Cuenta Completa) de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Max (Platino - Cuenta Completa)', price: 108, durationText: 'MXN / mes', description: 'La máxima calidad 4K en una cuenta completa para compartir.', message: 'Hola, me interesa contratar Max (Platino - Cuenta Completa) de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Vix Premium', price: 11, durationText: 'MXN / mes', description: 'Deportes en vivo, novelas y contenido exclusivo en español.', message: 'Hola, me interesa contratar Vix Premium de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Spotify', price: 68, durationText: 'MXN / mes', description: 'Música sin límites, sin anuncios y con la mejor calidad de audio.', message: 'Hola, me interesa contratar Spotify de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'YouTube Premium', price: 22, durationText: 'MXN / mes', description: 'Videos sin anuncios, descargas y YouTube Music. Perfil individual.', message: 'Hola, me interesa contratar YouTube Premium de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'YouTube Premium (Familiar)', price: 72, durationText: 'MXN / mes', description: 'Plan familiar completo para compartir y ahorrar.', message: 'Hola, me interesa contratar YouTube Premium (Familiar) de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Canva Pro', price: 36, durationText: 'MXN / 1 Mes', description: 'Todas las herramientas de diseño premium para tus proyectos.', message: 'Hola, me interesa contratar Canva Pro (1 Mes) de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Canva Pro', price: 90, durationText: 'MXN / 6 Meses', description: 'Asegura medio año de diseño sin límites y ahorra.', message: 'Hola, me interesa contratar Canva Pro (6 Meses) de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Canva Pro', price: 216, durationText: 'MXN / 1 Año', description: '¡La mejor oferta! Un año completo de Canva Pro.', message: 'Hola, me interesa contratar Canva Pro (1 Año) de Kary.', type: 'individual' },
-    { provider: 'Pris Shop', name: 'Netflix (Perfil)', price: 63, durationText: 'MXN / mes', description: 'Acceso a 1 perfil en una cuenta compartida. Calidad HD.', message: 'Hola, me interesa Netflix (Perfil) de Pris Shop.', type: 'individual' },
-    { provider: 'Pris Shop', name: 'Netflix (Perfil Privado)', price: 99, durationText: 'MXN / mes', description: 'Un perfil solo para ti, protegido con tu propio PIN de seguridad.', message: 'Hola, me interesa Netflix (Perfil Privado) de Pris Shop.', type: 'individual' },
-    { provider: 'Pris Shop', name: 'Netflix (Cuenta Completa)', price: 252, durationText: 'MXN / mes', description: 'Cuenta privada con todos los perfiles para ti y tu familia.', message: 'Hola, me interesa Netflix (Cuenta Completa) de Pris Shop.', type: 'individual' },
-    { provider: 'Pris Shop', name: 'Disney+ (Perfil)', price: 35, durationText: 'MXN / mes', description: 'Un perfil para disfrutar todo el contenido de Disney, Pixar y Marvel.', message: 'Hola, me interesa Disney+ (Perfil) de Pris Shop.', type: 'individual' },
-    { provider: 'Pris Shop', name: 'Max (Platino Perfil)', price: 35, durationText: 'MXN / mes', description: 'La mejor experiencia en 1 perfil con calidad 4K Ultra HD.', message: 'Hola, me interesa Max (Platino Perfil) de Pris Shop.', type: 'individual' },
-    { provider: 'Pris Shop', name: 'Prime Video (Perfil Sin Anuncios)', price: 25, durationText: 'MXN / mes', description: 'Disfruta de películas y series sin interrupciones comerciales.', message: 'Hola, me interesa Prime Video (Perfil Sin Anuncios) de Pris Shop.', type: 'individual' },
-    { provider: 'Pris Shop', name: 'Crunchyroll (Perfil Anual)', price: 72, durationText: 'MXN / año', description: '¡Oferta anual! Todo un año de anime a un precio increíble.', message: 'Hola, me interesa Crunchyroll (Perfil Anual) de Pris Shop.', type: 'individual' },
-    { provider: 'Pris Shop', name: 'YouTube Premium (Invitación)', price: 20, durationText: 'MXN / mes', description: 'Te unes a nuestro plan familiar. Simple, rápido y sin anuncios.', message: 'Hola, me interesa YouTube (Invitación) de Pris Shop.', type: 'individual' },
-    { provider: 'Pris Shop', name: 'Game Pass Ultimate', price: 270, durationText: 'MXN / mes', description: 'Cientos de juegos en consola, PC y la nube.', message: 'Hola, me interesa Game Pass Ultimate (1 Mes) de Pris Shop.', type: 'individual' }
+    { provider: 'Kary', name: 'Netflix', price: 77.80, durationText: 'MXN / mes', description: 'Disfruta de series y películas populares. Acceso a 1 perfil.', message: 'Hola, me interesa contratar Netflix de Kary.', type: 'individual' },
+    { provider: 'Kary', name: 'Disney+ Combo', price: 44.61, durationText: 'MXN / mes', description: 'Incluye Disney+, ESPN y Star+.', message: 'Hola, me interesa contratar el combo Disney+ de Kary.', type: 'individual' },
+    { provider: 'Kary', name: 'Paramount+', price: 16.60, durationText: 'MXN / mes', description: 'Contenido exclusivo, series y películas originales.', message: 'Hola, me interesa contratar Paramount+ de Kary.', type: 'individual' },
+    { provider: 'Kary', name: 'Prime Video', price: 25.93, durationText: 'MXN / mes', description: 'Acceso a Amazon Originals, películas y series populares.', message: 'Hola, me interesa contratar Prime Video de Kary.', type: 'individual' },
+    { provider: 'Kary', name: 'Prime Video (Sin Anuncios)', price: 87.14, durationText: 'MXN / mes', description: 'La experiencia premium de Prime Video sin interrupciones comerciales.', message: 'Hola, me interesa contratar Prime Video Sin Anuncios de Kary.', type: 'individual' },
+    { provider: 'Kary', name: 'Crunchyroll', price: 16.60, durationText: 'MXN / mes', description: 'La casa del anime. Acceso a un extenso catálogo sin anuncios.', message: 'Hola, me interesa contratar Crunchyroll de Kary.', type: 'individual' },
+    { provider: 'Kary', name: 'Crunchyroll (5 Perfiles)', price: 59.13, durationText: 'MXN / mes', description: 'Cuenta completa para compartir con hasta 5 personas.', message: 'Hola, me interesa contratar Crunchyroll (5 Perfiles) de Kary.', type: 'individual' },
+    { provider: 'Kary', name: 'Max (Estándar)', price: 21.78, durationText: 'MXN / mes', description: 'Acceso a 1 perfil en el plan Estándar de Max (antes HBO).', message: 'Hola, me interesa contratar Max (Estándar) de Kary.', type: 'individual' },
+    { provider: 'Kary', name: 'Max (Platino)', price: 33.20, durationText: 'MXN / mes', description: 'La mejor calidad en 4K Ultra HD y audio Dolby Atmos.', message: 'Hola, me interesa contratar Max (Platino) de Kary.', type: 'individual' },
+    { provider: 'Kary', name: 'Max (Estándar - Cuenta Completa)', price: 77.80, durationText: 'MXN / mes', description: 'Cuenta completa del plan Estándar para toda la familia.', message: 'Hola, me interesa contratar Max (Estándar - Cuenta Completa) de Kary.', type: 'individual' },
+    { provider: 'Kary', name: 'Max (Platino - Cuenta Completa)', price: 115.15, durationText: 'MXN / mes', description: 'La máxima calidad 4K en una cuenta completa para compartir.', message: 'Hola, me interesa contratar Max (Platino - Cuenta Completa) de Kary.', type: 'individual' },
+    { provider: 'Kary', name: 'Vix Premium', price: 14.52, durationText: 'MXN / mes', description: 'Deportes en vivo, novelas y contenido exclusivo en español.', message: 'Hola, me interesa contratar Vix Premium de Kary.', type: 'individual' },
+    { provider: 'Kary', name: 'Spotify', price: 73.65, durationText: 'MXN / mes', description: 'Música sin límites, sin anuncios y con la mejor calidad de audio.', message: 'Hola, me interesa contratar Spotify de Kary.', type: 'individual' },
+    { provider: 'Kary', name: 'YouTube Premium', price: 25.93, durationText: 'MXN / mes', description: 'Videos sin anuncios, descargas y YouTube Music. Perfil individual.', message: 'Hola, me interesa contratar YouTube Premium de Kary.', type: 'individual' },
+    { provider: 'Kary', name: 'YouTube Premium (Familiar)', price: 77.80, durationText: 'MXN / mes', description: 'Plan familiar completo para compartir y ahorrar.', message: 'Hola, me interesa contratar YouTube Premium (Familiar) de Kary.', type: 'individual' },
+    { provider: 'Kary', name: 'Canva Pro', price: 40.46, durationText: 'MXN / 1 Mes', description: 'Todas las herramientas de diseño premium para tus proyectos.', message: 'Hola, me interesa contratar Canva Pro (1 Mes) de Kary.', type: 'individual' },
+    { provider: 'Kary', name: 'Canva Pro', price: 96.47, durationText: 'MXN / 6 Meses', description: 'Asegura medio año de diseño sin límites y ahorra.', message: 'Hola, me interesa contratar Canva Pro (6 Meses) de Kary.', type: 'individual' },
+    { provider: 'Kary', name: 'Canva Pro', price: 227.18, durationText: 'MXN / 1 Año', description: '¡La mejor oferta! Un año completo de Canva Pro.', message: 'Hola, me interesa contratar Canva Pro (1 Año) de Kary.', type: 'individual' },
+    { provider: 'Pris Shop', name: 'Netflix (Perfil)', price: 68.46, durationText: 'MXN / mes', description: 'Acceso a 1 perfil en una cuenta compartida. Calidad HD.', message: 'Hola, me interesa Netflix (Perfil) de Pris Shop.', type: 'individual' },
+    { provider: 'Pris Shop', name: 'Netflix (Perfil Privado)', price: 105.81, durationText: 'MXN / mes', description: 'Un perfil solo para ti, protegido con tu propio PIN de seguridad.', message: 'Hola, me interesa Netflix (Perfil Privado) de Pris Shop.', type: 'individual' },
+    { provider: 'Pris Shop', name: 'Netflix (Cuenta Completa)', price: 264.52, durationText: 'MXN / mes', description: 'Cuenta privada con todos los perfiles para ti y tu familia.', message: 'Hola, me interesa Netflix (Cuenta Completa) de Pris Shop.', type: 'individual' },
+    { provider: 'Pris Shop', name: 'Disney+ (Perfil)', price: 39.42, durationText: 'MXN / mes', description: 'Un perfil para disfrutar todo el contenido de Disney, Pixar y Marvel.', message: 'Hola, me interesa Disney+ (Perfil) de Pris Shop.', type: 'individual' },
+    { provider: 'Pris Shop', name: 'Max (Platino Perfil)', price: 39.42, durationText: 'MXN / mes', description: 'La mejor experiencia en 1 perfil con calidad 4K Ultra HD.', message: 'Hola, me interesa Max (Platino Perfil) de Pris Shop.', type: 'individual' },
+    { provider: 'Pris Shop', name: 'Prime Video (Perfil Sin Anuncios)', price: 29.05, durationText: 'MXN / mes', description: 'Disfruta de películas y series sin interrupciones comerciales.', message: 'Hola, me interesa Prime Video (Perfil Sin Anuncios) de Pris Shop.', type: 'individual' },
+    { provider: 'Pris Shop', name: 'Crunchyroll (Perfil Anual)', price: 77.80, durationText: 'MXN / año', description: '¡Oferta anual! Todo un año de anime a un precio increíble.', message: 'Hola, me interesa Crunchyroll (Perfil Anual) de Pris Shop.', type: 'individual' },
+    { provider: 'Pris Shop', name: 'YouTube Premium (Invitación)', price: 23.86, durationText: 'MXN / mes', description: 'Te unes a nuestro plan familiar. Simple, rápido y sin anuncios.', message: 'Hola, me interesa YouTube (Invitación) de Pris Shop.', type: 'individual' },
+    { provider: 'Pris Shop', name: 'Game Pass Ultimate', price: 283.20, durationText: 'MXN / mes', description: 'Cientos de juegos en consola, PC y la nube.', message: 'Hola, me interesa Game Pass Ultimate (1 Mes) de Pris Shop.', type: 'individual' },
 ];
 
 // ===================================================================
@@ -121,9 +121,9 @@ document.addEventListener('DOMContentLoaded', () => {
             let total = subtotal;
             let discountPercentage = 0;
 
-            if (count >= 8) { discountPercentage = 60; } 
-            else if (count >= 6) { discountPercentage = 40; } 
-            else if (count >= 4) { discountPercentage = 30; }
+            if (count >= 8) { discountPercentage = 50; } 
+            else if (count >= 6) { discountPercentage = 30; } 
+            else if (count >= 4) { discountPercentage = 15; }
 
             if (discountPercentage > 0) {
                 total = subtotal * (1 - discountPercentage / 100);
