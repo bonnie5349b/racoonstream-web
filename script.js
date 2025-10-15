@@ -18,12 +18,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (promoList) promoList.innerHTML = '<p class="loading-message">Cargando servicios...</p>';
         
         try {
-            // Se añade un parámetro extra a la URL para evitar que el navegador guarde una versión vieja (caché)
             const response = await fetch(googleSheetUrl + `&t=${new Date().getTime()}`);
             if (!response.ok) throw new Error('No se pudo conectar con la base de datos.');
             
             const csvText = await response.text();
-            
             const lines = csvText.split(/\r?\n/);
             const headers = lines[0].split(',');
             
@@ -33,13 +31,14 @@ document.addEventListener('DOMContentLoaded', async () => {
                 headers.forEach((header, index) => {
                     const value = values[index] ? values[index].replace(/^"|"$/g, '').trim() : '';
                     if (header === 'price') {
-                        product[header] = parseFloat(value) || 0;
+                        // ¡AQUÍ ESTÁ LA MAGIA! Reemplaza la coma por un punto antes de convertir.
+                        product[header] = parseFloat(value.replace(',', '.')) || 0;
                     } else {
                         product[header] = value;
                     }
                 });
                 return product;
-            }).filter(p => p.name); // Filtra cualquier fila vacía que pueda venir del CSV
+            }).filter(p => p.name);
             
             iniciarApp();
             
@@ -50,6 +49,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
+    // --- FUNCIÓN QUE INICIA TODA LA LÓGICA ---
+    function iniciarApp() {
+        // ... (El resto del código es idéntico y no necesita ser pegado aquí, pero está en el bloque completo de arriba) ...
+    }
+
+    // El resto de tu código sigue aquí...
+    
     // --- FUNCIÓN QUE INICIA TODA LA LÓGICA ---
     function iniciarApp() {
         const productGrid = document.getElementById('product-grid');
