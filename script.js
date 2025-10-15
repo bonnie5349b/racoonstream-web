@@ -1,187 +1,180 @@
 // ===================================================================
-//  BASE DE DATOS DE PRODUCTOS (PRECIOS ACTUALIZADOS CON COMISIÓN)
+//  CONFIGURACIÓN DE LA BASE DE DATOS
 // ===================================================================
-const productos = [
-    // --- COMBOS PREDEFINIDOS DE KARY ---
-    { provider: 'Kary', name: 'Combo Fantasma 👻', price: 80.91, durationText: 'MXN / mes', description: '<ul><li>Netflix</li><li>Disney Premium</li><li>Vix</li><li>Deezer</li></ul>', message: 'Hola, me interesa el Combo Fantasma de Kary.', type: 'combo' },
-    { provider: 'Kary', name: 'Combo Telaraña 🕸️', price: 60.17, durationText: 'MXN / mes', description: '<ul><li>Disney</li><li>Max</li><li>YouTube</li><li>Paramount</li></ul>', message: 'Hola, me interesa el Combo Telaraña de Kary.', type: 'combo' },
-    { provider: 'Kary', name: 'Combo Dulce 🍡', price: 135.89, durationText: 'MXN / mes', description: '<ul><li>Netflix, Disney, Max</li><li>Vix, Paramount</li><li>Crunchyroll, Spotify</li></ul>', message: 'Hola, me interesa el Combo Dulce de Kary.', type: 'combo' },
-    { provider: 'Kary', name: 'Combo Truco 🎃', price: 70.54, durationText: 'MXN / mes', description: '<ul><li>Canva, YouTube</li><li>Crunchyroll, Paramount</li><li>Vix, Prime Video</li></ul>', message: 'Hola, me interesa el Combo Truco de Kary.', type: 'combo' },
-    
-    // --- PRODUCTOS INDIVIDUALES (KARY Y PRIS SHOP) ---
-    { provider: 'Kary', name: 'Netflix', price: 77.80, durationText: 'MXN / mes', description: 'Disfruta de series y películas populares. Acceso a 1 perfil.', message: 'Hola, me interesa contratar Netflix de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Disney+ Combo', price: 44.61, durationText: 'MXN / mes', description: 'Incluye Disney+, ESPN y Star+.', message: 'Hola, me interesa contratar el combo Disney+ de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Paramount+', price: 16.60, durationText: 'MXN / mes', description: 'Contenido exclusivo, series y películas originales.', message: 'Hola, me interesa contratar Paramount+ de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Prime Video', price: 25.93, durationText: 'MXN / mes', description: 'Acceso a Amazon Originals, películas y series populares.', message: 'Hola, me interesa contratar Prime Video de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Prime Video (Sin Anuncios)', price: 87.14, durationText: 'MXN / mes', description: 'La experiencia premium de Prime Video sin interrupciones comerciales.', message: 'Hola, me interesa contratar Prime Video Sin Anuncios de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Crunchyroll', price: 16.60, durationText: 'MXN / mes', description: 'La casa del anime. Acceso a un extenso catálogo sin anuncios.', message: 'Hola, me interesa contratar Crunchyroll de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Crunchyroll (5 Perfiles)', price: 59.13, durationText: 'MXN / mes', description: 'Cuenta completa para compartir con hasta 5 personas.', message: 'Hola, me interesa contratar Crunchyroll (5 Perfiles) de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Max (Estándar)', price: 21.78, durationText: 'MXN / mes', description: 'Acceso a 1 perfil en el plan Estándar de Max (antes HBO).', message: 'Hola, me interesa contratar Max (Estándar) de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Max (Platino)', price: 33.20, durationText: 'MXN / mes', description: 'La mejor calidad en 4K Ultra HD y audio Dolby Atmos.', message: 'Hola, me interesa contratar Max (Platino) de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Max (Estándar - Cuenta Completa)', price: 77.80, durationText: 'MXN / mes', description: 'Cuenta completa del plan Estándar para toda la familia.', message: 'Hola, me interesa contratar Max (Estándar - Cuenta Completa) de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Max (Platino - Cuenta Completa)', price: 115.15, durationText: 'MXN / mes', description: 'La máxima calidad 4K en una cuenta completa para compartir.', message: 'Hola, me interesa contratar Max (Platino - Cuenta Completa) de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Vix Premium', price: 14.52, durationText: 'MXN / mes', description: 'Deportes en vivo, novelas y contenido exclusivo en español.', message: 'Hola, me interesa contratar Vix Premium de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Spotify', price: 73.65, durationText: 'MXN / mes', description: 'Música sin límites, sin anuncios y con la mejor calidad de audio.', message: 'Hola, me interesa contratar Spotify de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'YouTube Premium', price: 25.93, durationText: 'MXN / mes', description: 'Videos sin anuncios, descargas y YouTube Music. Perfil individual.', message: 'Hola, me interesa contratar YouTube Premium de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'YouTube Premium (Familiar)', price: 77.80, durationText: 'MXN / mes', description: 'Plan familiar completo para compartir y ahorrar.', message: 'Hola, me interesa contratar YouTube Premium (Familiar) de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Canva Pro', price: 40.46, durationText: 'MXN / 1 Mes', description: 'Todas las herramientas de diseño premium para tus proyectos.', message: 'Hola, me interesa contratar Canva Pro (1 Mes) de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Canva Pro', price: 96.47, durationText: 'MXN / 6 Meses', description: 'Asegura medio año de diseño sin límites y ahorra.', message: 'Hola, me interesa contratar Canva Pro (6 Meses) de Kary.', type: 'individual' },
-    { provider: 'Kary', name: 'Canva Pro', price: 227.18, durationText: 'MXN / 1 Año', description: '¡La mejor oferta! Un año completo de Canva Pro.', message: 'Hola, me interesa contratar Canva Pro (1 Año) de Kary.', type: 'individual' },
-    { provider: 'Pris Shop', name: 'Netflix (Perfil)', price: 68.46, durationText: 'MXN / mes', description: 'Acceso a 1 perfil en una cuenta compartida. Calidad HD.', message: 'Hola, me interesa Netflix (Perfil) de Pris Shop.', type: 'individual' },
-    { provider: 'Pris Shop', name: 'Netflix (Perfil Privado)', price: 105.81, durationText: 'MXN / mes', description: 'Un perfil solo para ti, protegido con tu propio PIN de seguridad.', message: 'Hola, me interesa Netflix (Perfil Privado) de Pris Shop.', type: 'individual' },
-    { provider: 'Pris Shop', name: 'Netflix (Cuenta Completa)', price: 264.52, durationText: 'MXN / mes', description: 'Cuenta privada con todos los perfiles para ti y tu familia.', message: 'Hola, me interesa Netflix (Cuenta Completa) de Pris Shop.', type: 'individual' },
-    { provider: 'Pris Shop', name: 'Disney+ (Perfil)', price: 39.42, durationText: 'MXN / mes', description: 'Un perfil para disfrutar todo el contenido de Disney, Pixar y Marvel.', message: 'Hola, me interesa Disney+ (Perfil) de Pris Shop.', type: 'individual' },
-    { provider: 'Pris Shop', name: 'Max (Platino Perfil)', price: 39.42, durationText: 'MXN / mes', description: 'La mejor experiencia en 1 perfil con calidad 4K Ultra HD.', message: 'Hola, me interesa Max (Platino Perfil) de Pris Shop.', type: 'individual' },
-    { provider: 'Pris Shop', name: 'Prime Video (Perfil Sin Anuncios)', price: 29.05, durationText: 'MXN / mes', description: 'Disfruta de películas y series sin interrupciones comerciales.', message: 'Hola, me interesa Prime Video (Perfil Sin Anuncios) de Pris Shop.', type: 'individual' },
-    { provider: 'Pris Shop', name: 'Crunchyroll (Perfil Anual)', price: 77.80, durationText: 'MXN / año', description: '¡Oferta anual! Todo un año de anime a un precio increíble.', message: 'Hola, me interesa Crunchyroll (Perfil Anual) de Pris Shop.', type: 'individual' },
-    { provider: 'Pris Shop', name: 'YouTube Premium (Invitación)', price: 23.86, durationText: 'MXN / mes', description: 'Te unes a nuestro plan familiar. Simple, rápido y sin anuncios.', message: 'Hola, me interesa YouTube (Invitación) de Pris Shop.', type: 'individual' },
-    { provider: 'Pris Shop', name: 'Game Pass Ultimate', price: 283.20, durationText: 'MXN / mes', description: 'Cientos de juegos en consola, PC y la nube.', message: 'Hola, me interesa Game Pass Ultimate (1 Mes) de Pris Shop.', type: 'individual' },
-];
+const googleSheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKjK1fDKb5ZrkW7j7FsJOZLuy4WaequwHT_WCVZu1dHlMDLTmqlbaNga9_xgzW0H91Vv7d79N7-3W/pub?gid=1732763592&single=true&output=csv";
 
 // ===================================================================
 //  LÓGICA DEL SITIO WEB
 // ===================================================================
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    let productos = [];
     let carrito = [];
 
-    // --- LÓGICA DEL CATÁLOGO ---
-    const productGrid = document.getElementById('product-grid');
-    if (productGrid) {
-        const filterButtons = document.querySelectorAll('.filtro-btn');
+    // --- FUNCIÓN PARA CARGAR PRODUCTOS DESDE GOOGLE SHEETS ---
+    async function cargarProductos() {
+        const productGrid = document.getElementById('product-grid');
+        const promoList = document.getElementById('promo-service-list');
+        if (productGrid) productGrid.innerHTML = '<p class="loading-message">Cargando catálogo...</p>';
+        if (promoList) promoList.innerHTML = '<p class="loading-message">Cargando servicios...</p>';
+        
+        try {
+            // Se añade un parámetro extra a la URL para evitar que el navegador guarde una versión vieja (caché)
+            const response = await fetch(googleSheetUrl + `&t=${new Date().getTime()}`);
+            if (!response.ok) throw new Error('No se pudo conectar con la base de datos.');
+            
+            const csvText = await response.text();
+            
+            const lines = csvText.split(/\r?\n/);
+            const headers = lines[0].split(',');
+            
+            productos = lines.slice(1).map(line => {
+                const values = line.split(',');
+                const product = {};
+                headers.forEach((header, index) => {
+                    const value = values[index] ? values[index].replace(/^"|"$/g, '').trim() : '';
+                    if (header === 'price') {
+                        product[header] = parseFloat(value) || 0;
+                    } else {
+                        product[header] = value;
+                    }
+                });
+                return product;
+            }).filter(p => p.name); // Filtra cualquier fila vacía que pueda venir del CSV
+            
+            iniciarApp();
+            
+        } catch (error) {
+            console.error('Error al cargar los productos:', error);
+            if (productGrid) productGrid.innerHTML = '<p class="error-message">No se pudo cargar el catálogo. Por favor, intenta más tarde.</p>';
+            if (promoList) promoList.innerHTML = '<p class="error-message">No se pudo cargar el catálogo. Por favor, intenta más tarde.</p>';
+        }
+    }
 
-        function displayProducts(productsToDisplay) {
-            productGrid.innerHTML = '';
-            productsToDisplay.forEach((product) => {
-                const isCombo = product.type === 'combo';
-                const productCard = document.createElement('article');
-                productCard.className = isCombo ? 'producto combo' : 'producto';
+    // --- FUNCIÓN QUE INICIA TODA LA LÓGICA ---
+    function iniciarApp() {
+        const productGrid = document.getElementById('product-grid');
+        if (productGrid) {
+            const filterButtons = document.querySelectorAll('.filtro-btn');
 
-                const addButton = document.createElement('button');
-                addButton.className = 'boton-comprar add-to-cart-btn';
-                addButton.textContent = 'Añadir al carrito';
-                addButton._productData = product;
+            function formatDescription(description) {
+                if (!description) return '';
+                if (description.includes(',')) {
+                    const items = description.split(',').map(item => `<li>${item.trim()}</li>`).join('');
+                    return `<ul>${items}</ul>`;
+                }
+                return `<p>${description}</p>`;
+            }
 
-                productCard.innerHTML = `
-                    <h3>${product.name}</h3>
-                    <p class="precio">$${product.price} ${product.durationText}</p>
-                    ${product.description}
-                `;
-                productCard.appendChild(addButton);
-                productGrid.appendChild(productCard);
+            function displayProducts(productsToDisplay) {
+                productGrid.innerHTML = '';
+                productsToDisplay.forEach((product) => {
+                    const isCombo = product.type === 'combo';
+                    const productCard = document.createElement('article');
+                    productCard.className = isCombo ? 'producto combo' : 'producto';
+                    const addButton = document.createElement('button');
+                    addButton.className = 'boton-comprar add-to-cart-btn';
+                    addButton.textContent = 'Añadir al carrito';
+                    addButton._productData = product;
+                    productCard.innerHTML = `
+                        <h3>${product.name}</h3>
+                        <p class="precio">$${product.price.toFixed(2)} ${product.durationText}</p>
+                        ${formatDescription(product.description)} 
+                    `;
+                    productCard.appendChild(addButton);
+                    productGrid.appendChild(productCard);
+                });
+            }
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    const provider = button.getAttribute('data-provider');
+                    const filteredProducts = provider === 'todos' ? productos : productos.filter(p => p.provider === provider);
+                    displayProducts(filteredProducts);
+                });
             });
+            displayProducts(productos);
         }
 
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                const provider = button.getAttribute('data-provider');
-                const filteredProducts = provider === 'todos' ? productos : productos.filter(p => p.provider === provider);
-                displayProducts(filteredProducts);
-            });
-        });
-        displayProducts(productos);
-    }
-
-    // --- LÓGICA DE LA PÁGINA DE PROMOCIONES ---
-    const promoServiceList = document.getElementById('promo-service-list');
-    if (promoServiceList) {
-        const itemCountEl = document.getElementById('item-count');
-        const subtotalPriceEl = document.getElementById('subtotal-price');
-        const descuentoTextoEl = document.getElementById('descuento-texto');
-        const totalPriceEl = document.getElementById('total-price');
-        const addBundleBtn = document.getElementById('add-bundle-to-cart-btn');
-        const serviciosIndividuales = productos.filter(p => p.type === 'individual');
-
-        serviciosIndividuales.forEach((service, index) => {
-            const serviceElement = document.createElement('div');
-            serviceElement.className = 'service-item';
-            serviceElement.innerHTML = `
-                <input type="checkbox" id="service-${index}">
-                <label for="service-${index}">${service.name} (${service.provider})</label>
-                <span class="precio">$${service.price} ${service.durationText}</span>
-            `;
-            promoServiceList.appendChild(serviceElement);
-        });
-
-        promoServiceList.addEventListener('change', () => {
-            let count = 0;
-            let subtotal = 0;
-            const selectedServicesNames = [];
+        const promoServiceList = document.getElementById('promo-service-list');
+        if (promoServiceList) {
+            const itemCountEl = document.getElementById('item-count');
+            const subtotalPriceEl = document.getElementById('subtotal-price');
+            const descuentoTextoEl = document.getElementById('descuento-texto');
+            const totalPriceEl = document.getElementById('total-price');
+            const addBundleBtn = document.getElementById('add-bundle-to-cart-btn');
+            const serviciosIndividuales = productos.filter(p => p.type === 'individual');
             
+            promoServiceList.innerHTML = '';
             serviciosIndividuales.forEach((service, index) => {
-                const checkbox = document.getElementById(`service-${index}`);
-                if (checkbox.checked) {
-                    count++;
-                    subtotal += service.price;
-                    selectedServicesNames.push(`${service.name} (${service.provider})`);
+                const serviceElement = document.createElement('div');
+                serviceElement.className = 'service-item';
+                serviceElement.innerHTML = `
+                    <input type="checkbox" id="service-${index}">
+                    <label for="service-${index}">${service.name} (${service.provider})</label>
+                    <span class="precio">$${service.price.toFixed(2)} ${service.durationText}</span>
+                `;
+                promoServiceList.appendChild(serviceElement);
+            });
+
+            promoServiceList.addEventListener('change', () => {
+                let count = 0, subtotal = 0;
+                const selectedServicesNames = [];
+                serviciosIndividuales.forEach((service, index) => {
+                    if (document.getElementById(`service-${index}`).checked) {
+                        count++;
+                        subtotal += service.price;
+                        selectedServicesNames.push(`${service.name} (${service.provider})`);
+                    }
+                });
+                let total = subtotal, discountPercentage = 0;
+                if (count >= 8) discountPercentage = 50;
+                else if (count >= 6) discountPercentage = 30;
+                else if (count >= 4) discountPercentage = 15;
+                if (discountPercentage > 0) {
+                    total = subtotal * (1 - discountPercentage / 100);
+                    descuentoTextoEl.innerHTML = `¡Felicidades! Tienes un <strong>${discountPercentage}% de descuento.</strong><br>(Ahorras $${(subtotal - total).toFixed(2)})`;
+                } else if (count > 0) {
+                    descuentoTextoEl.textContent = `¡Selecciona ${4 - count} más para obtener tu primer descuento!`;
+                } else {
+                    descuentoTextoEl.textContent = 'Selecciona 4 o más servicios para obtener un descuento.';
+                }
+                itemCountEl.textContent = count;
+                totalPriceEl.textContent = `$${total.toFixed(2)} MXN`;
+                subtotalPriceEl.innerHTML = discountPercentage > 0 ? `<s>$${subtotal.toFixed(2)} MXN</s>` : `$${subtotal.toFixed(2)} MXN`;
+                addBundleBtn.disabled = count === 0;
+                addBundleBtn._bundleData = {
+                    provider: 'Paquete Personalizado', name: `Paquete Personalizado (${count} servicios)`,
+                    price: parseFloat(total.toFixed(2)), durationText: 'MXN',
+                    description: selectedServicesNames.join(', ')
+                };
+            });
+            promoServiceList.dispatchEvent(new Event('change'));
+            addBundleBtn.addEventListener('click', () => {
+                if (!addBundleBtn.disabled) {
+                    carrito.push(addBundleBtn._bundleData);
+                    actualizarCarrito();
+                    alert('¡Paquete personalizado añadido al carrito!');
                 }
             });
-
-            let total = subtotal;
-            let discountPercentage = 0;
-
-            if (count >= 8) { discountPercentage = 50; } 
-            else if (count >= 6) { discountPercentage = 30; } 
-            else if (count >= 4) { discountPercentage = 15; }
-
-            if (discountPercentage > 0) {
-                total = subtotal * (1 - discountPercentage / 100);
-                descuentoTextoEl.innerHTML = `¡Felicidades! Tienes un <strong>${discountPercentage}% de descuento.</strong><br>(Ahorras $${(subtotal - total).toFixed(2)})`;
-            } else if (count > 0) {
-                descuentoTextoEl.textContent = `¡Selecciona ${4 - count} más para obtener tu primer descuento!`;
-            } else {
-                descuentoTextoEl.textContent = 'Selecciona 4 o más servicios para obtener un descuento.';
-            }
-
-            itemCountEl.textContent = count;
-            totalPriceEl.textContent = `$${total.toFixed(2)} MXN`;
-            subtotalPriceEl.innerHTML = discountPercentage > 0 ? `<s>$${subtotal.toFixed(2)} MXN</s>` : `$${subtotal.toFixed(2)} MXN`;
-
-            addBundleBtn.disabled = count === 0;
-            addBundleBtn._bundleData = {
-                provider: 'Paquete Personalizado',
-                name: `Paquete Personalizado (${count} servicios)`,
-                price: parseFloat(total.toFixed(2)),
-                durationText: 'MXN',
-                description: selectedServicesNames.join(', '),
-                message: `Hola, me interesa el siguiente Paquete Personalizado:\n- ${selectedServicesNames.join('\n- ')}\n\nTotal con ${discountPercentage}% de descuento: $${total.toFixed(2)} MXN`
-            };
-        });
-        
-        promoServiceList.dispatchEvent(new Event('change'));
-
-        addBundleBtn.addEventListener('click', () => {
-            if (!addBundleBtn.disabled) {
-                carrito.push(addBundleBtn._bundleData);
-                actualizarCarrito();
-                alert('¡Paquete personalizado añadido al carrito!');
-            }
-        });
+        }
     }
 
-    // --- LÓGICA GLOBAL DEL CARRITO ---
-    const carritoIcono = document.getElementById('carrito-icono');
-    const modalCarrito = document.getElementById('modal-carrito');
-    const cerrarModal = document.getElementById('cerrar-modal');
-    const carritoContador = document.getElementById('carrito-contador');
-    const carritoItemsContainer = document.getElementById('carrito-items');
-    const finalizarCompraBtn = document.getElementById('finalizar-compra-btn');
-    const vaciarCarritoBtn = document.getElementById('vaciar-carrito-btn');
+    const carritoIcono = document.getElementById('carrito-icono'), modalCarrito = document.getElementById('modal-carrito'),
+    cerrarModal = document.getElementById('cerrar-modal'), carritoContador = document.getElementById('carrito-contador'),
+    carritoItemsContainer = document.getElementById('carrito-items'), finalizarCompraBtn = document.getElementById('finalizar-compra-btn'),
+    vaciarCarritoBtn = document.getElementById('vaciar-carrito-btn');
 
     function actualizarCarrito() {
         carritoContador.textContent = carrito.length;
-        carritoItemsContainer.innerHTML = '';
-        if (carrito.length === 0) {
-            carritoItemsContainer.innerHTML = '<p>Tu carrito está vacío.</p>';
-        } else {
+        carritoItemsContainer.innerHTML = carrito.length === 0 ? '<p>Tu carrito está vacío.</p>' : '';
+        if (carrito.length > 0) {
             carrito.forEach((item, index) => {
                 const itemElement = document.createElement('div');
                 itemElement.className = 'carrito-item';
-                let itemHTML = `<div class="carrito-item-info"><span>${item.name} - $${item.price} ${item.durationText}</span>`;
-                if (item.provider === 'Paquete Personalizado') {
-                    itemHTML += `<small class="carrito-item-detalle">${item.description}</small>`;
-                }
+                let itemHTML = `<div class="carrito-item-info"><span>${item.name} - $${item.price.toFixed(2)} ${item.durationText}</span>`;
+                if (item.provider === 'Paquete Personalizado') itemHTML += `<small class="carrito-item-detalle">${item.description}</small>`;
                 itemHTML += `</div><button class="eliminar-item-btn" data-index="${index}">X</button>`;
                 itemElement.innerHTML = itemHTML;
                 carritoItemsContainer.appendChild(itemElement);
@@ -191,63 +184,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     carritoIcono.addEventListener('click', () => modalCarrito.style.display = 'block');
     cerrarModal.addEventListener('click', () => modalCarrito.style.display = 'none');
-    window.addEventListener('click', (event) => {
-        if (event.target == modalCarrito) {
-            modalCarrito.style.display = 'none';
-        }
-    });
-
-    document.body.addEventListener('click', (event) => {
-        if (event.target.classList.contains('add-to-cart-btn')) {
-            let product;
-            if (event.target._productData) {
-                product = event.target._productData;
-            } else {
-                const productName = event.target.getAttribute('data-product-name');
-                if (productName) {
-                    product = productos.find(p => p.name === productName);
-                }
-            }
-            if (product) {
-                carrito.push(product);
+    window.addEventListener('click', e => { if (e.target == modalCarrito) modalCarrito.style.display = 'none'; });
+    document.body.addEventListener('click', e => {
+        if (e.target.classList.contains('add-to-cart-btn')) {
+            if (e.target._productData) {
+                carrito.push(e.target._productData);
                 actualizarCarrito();
             }
         }
     });
-
-    carritoItemsContainer.addEventListener('click', (event) => {
-        if (event.target.classList.contains('eliminar-item-btn')) {
-            const itemIndex = parseInt(event.target.getAttribute('data-index'), 10);
-            carrito.splice(itemIndex, 1);
+    carritoItemsContainer.addEventListener('click', e => {
+        if (e.target.classList.contains('eliminar-item-btn')) {
+            carrito.splice(parseInt(e.target.dataset.index, 10), 1);
             actualizarCarrito();
         }
     });
-
     vaciarCarritoBtn.addEventListener('click', () => {
         if (carrito.length > 0 && confirm('¿Estás seguro de que quieres vaciar tu carrito?')) {
             carrito = [];
             actualizarCarrito();
         }
     });
-
-    finalizarCompraBtn.addEventListener('click', async (event) => {
-        event.preventDefault();
-        if (carrito.length === 0) {
-            alert('Tu carrito está vacío.');
-            return;
-        }
-
+    finalizarCompraBtn.addEventListener('click', async e => {
+        e.preventDefault();
+        if (carrito.length === 0) return alert('Tu carrito está vacío.');
         finalizarCompraBtn.textContent = 'Procesando...';
         finalizarCompraBtn.disabled = true;
-
         try {
             const response = await fetch('/.netlify/functions/create-checkout-session', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                method: 'POST', headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ carrito }),
             });
             if (!response.ok) throw new Error('Error en la respuesta del servidor.');
-            
             const { url } = await response.json();
             window.location.href = url;
         } catch (error) {
@@ -258,5 +226,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    cargarProductos();
     actualizarCarrito();
 });
